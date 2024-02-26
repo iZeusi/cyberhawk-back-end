@@ -19,6 +19,7 @@ class GradeTypeFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
+            'score' => $this->faker->numberBetween(0, 5),
         ];
     }
 }

@@ -12,6 +12,7 @@ class GradeType extends Model
 
     protected $fillable = [
         'name',
+        'score',
     ];
 
     public function grades(): HasMany

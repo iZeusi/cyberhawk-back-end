@@ -20,6 +20,7 @@ class GradeTypeController extends Controller
             return [
                 'id' => $gradeType->id,
                 'name' => $gradeType->name,
+                'score' => $gradeType->score,
                 'created_at' => $gradeType->created_at->toIso8601String(),
                 'updated_at' => $gradeType->updated_at->toIso8601String(),
             ];
