@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ComponentType;
 use Illuminate\Database\Seeder;
 
 class ComponentTypeSeeder extends Seeder
@@ -14,6 +14,6 @@ class ComponentTypeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        ComponentType::factory(50)->create();
     }
 }

@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('components', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('component_type_id');
             $table->unsignedInteger('turbine_id');
             $table->foreign('turbine_id')->references('id')->on('turbines');
+            $table->foreign('component_type_id')->references('id')->on('component_types');
             $table->softDeletes();
             $table->timestamps();
         });

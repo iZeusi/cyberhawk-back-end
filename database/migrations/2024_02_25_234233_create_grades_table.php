@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('inspection_id');
+            $table->unsignedBigInteger('component_id');
             $table->unsignedBigInteger('grade_type_id');
+            $table->foreign('inspection_id')->references('id')->on('inspections');
+            $table->foreign('component_id')->references('id')->on('components');
             $table->foreign('grade_type_id')->references('id')->on('grade_types');
             $table->softDeletes();
             $table->timestamps();

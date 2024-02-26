@@ -28,13 +28,13 @@ class Component extends Model
         return $this->belongsTo(ComponentType::class);
     }
 
-    public function componentInspections(): HasMany
+    public function grades(): HasMany
     {
-        return $this->hasMany(ComponentInspection::class);
+        return $this->hasMany(Grade::class);
     }
 
     public function inspections(): HasManyThrough
     {
-        return $this->hasManyThrough(Inspection::class, ComponentInspection::class);
+        return $this->hasManyThrough(Inspection::class, Grade::class);
     }
 }

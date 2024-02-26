@@ -16,9 +16,6 @@ return new class extends Migration
         Schema::create('grade_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('colour');
-            $table->integer('order')->nullable();
-            $table->boolean('compliant');
             $table->timestamps();
         });
     }

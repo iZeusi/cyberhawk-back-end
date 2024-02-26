@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\GradeType;
 use Illuminate\Database\Seeder;
 
 class GradeTypeSeeder extends Seeder
@@ -14,6 +14,6 @@ class GradeTypeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        GradeType::factory(50)->create();
     }
 }

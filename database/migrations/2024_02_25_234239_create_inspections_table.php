@@ -15,11 +15,8 @@ return new class extends Migration
     {
         Schema::create('inspections', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('wind_farm_id');
-            $table->unsignedInteger('inspector_id');
-            $table->unsignedInteger('grade_id');
-            $table->unsignedInteger('inspection_window_id');
-            $table->unsignedInteger('inspection_status_id');
+            $table->unsignedInteger('turbine_id');
+            $table->foreign('turbine_id')->references('id')->on('turbines');
             $table->softDeletes();
             $table->timestamps();
         });

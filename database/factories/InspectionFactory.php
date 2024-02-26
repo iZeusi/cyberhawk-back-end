@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Inspection;
+use App\Models\Turbine;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Inspections>
+ * @extends Factory<Inspection>
  */
 class InspectionFactory extends Factory
 {
@@ -14,10 +16,11 @@ class InspectionFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'turbine_id' => Turbine::factory(),
+            'inspected_at' => $this->faker->dateTime(),
         ];
     }
 }

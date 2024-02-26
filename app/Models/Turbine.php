@@ -28,4 +28,9 @@ class Turbine extends Model
     {
         return $this->hasMany(Component::class);
     }
+
+    public function inspection(): HasMany
+    {
+        return $this->hasMany(Inspection::class);
+    }
 }

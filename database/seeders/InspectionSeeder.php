@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Inspection;
 use Illuminate\Database\Seeder;
 
 class InspectionSeeder extends Seeder
@@ -14,6 +14,6 @@ class InspectionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Inspection::factory(50)->create();
     }
 }

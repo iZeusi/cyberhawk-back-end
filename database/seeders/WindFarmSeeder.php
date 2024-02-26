@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\WindFarm;
 use Illuminate\Database\Seeder;
 
 class WindFarmSeeder extends Seeder
@@ -14,6 +14,6 @@ class WindFarmSeeder extends Seeder
      */
     public function run()
     {
-        //
+        WindFarm::factory(50)->create();
     }
 }

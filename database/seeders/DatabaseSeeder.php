@@ -2,14 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Component;
-use App\Models\ComponentType;
-use App\Models\Farm;
-use App\Models\Grade;
-use App\Models\GradeType;
-use App\Models\Inspection;
-use App\Models\Turbine;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,5 +13,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            UserSeeder::class,
+            WindFarmSeeder::class,
+            TurbineSeeder::class,
+            InspectionSeeder::class,
+            GradeTypeSeeder::class,
+            GradeSeeder::class,
+            ComponentTypeSeeder::class,
+            ComponentSeeder::class,
+        ]);
     }
 }

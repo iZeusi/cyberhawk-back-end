@@ -20,14 +20,4 @@ class WindFarm extends Model
     {
         return $this->hasMany(Turbine::class);
     }
-
-    public function inspections(): HasMany
-    {
-        return $this->hasMany(Inspection::class);
-    }
-
-    public function scopeHasInspections(Builder $query): Builder
-    {
-        return $query->whereHas('inspections');
-    }
 }
