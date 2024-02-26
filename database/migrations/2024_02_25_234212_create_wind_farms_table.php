@@ -16,10 +16,6 @@ return new class extends Migration
         Schema::create('wind_farms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location')->nullable();
-            $table->string('contact_number')->nullable();
-            $table->unsignedInteger('owner_id')->nullable();
-            $table->foreign('owner_id')->references('id')->on('users');
             $table->softDeletes();
             $table->timestamps();
         });

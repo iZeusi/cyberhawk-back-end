@@ -13,12 +13,15 @@ class Turbine extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'wind_farm_id',
+        'farm_id',
+        'name',
+        'lat',
+        'lng',
     ];
 
     public function windFarm(): BelongsTo
     {
-        return $this->belongsTo(WindFarm::class);
+        return $this->belongsTo(WindFarm::class, 'id', 'farm_id');
     }
 
     public function components(): HasMany

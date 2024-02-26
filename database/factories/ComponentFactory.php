@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\ComponentType;
+use App\Models\Turbine;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,8 @@ class ComponentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'component_type_id' => ComponentType::factory(),
+            'turbine_id' => Turbine::factory(),
         ];
     }
 }

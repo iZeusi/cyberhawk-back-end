@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use App\Models\WindFarm;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\WindFarm>
+ * @extends Factory<WindFarm>
  */
 class WindFarmFactory extends Factory
 {
@@ -14,10 +16,13 @@ class WindFarmFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'location' => $this->faker->address,
+            'contact_number' => $this->faker->phoneNumber,
+            'owner_id' => User::factory(),
         ];
     }
 }

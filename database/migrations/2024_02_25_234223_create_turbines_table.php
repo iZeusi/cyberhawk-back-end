@@ -15,8 +15,11 @@ return new class extends Migration
     {
         Schema::create('turbines', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('wind_farm_id');
-            $table->foreign('wind_farm_id')->references('id')->on('wind_farms');
+            $table->string('name');
+            $table->unsignedInteger('farm_id');
+            $table->decimal('lat', 10, 6);
+            $table->decimal('lng', 10, 6);
+            $table->foreign('farm_id')->references('id')->on('wind_farms');
             $table->softDeletes();
             $table->timestamps();
         });

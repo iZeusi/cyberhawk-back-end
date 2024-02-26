@@ -38,9 +38,4 @@ class User extends Model
     {
         return $this->hasMany(Inspection::class, 'inspector_id');
     }
-
-    public function windFarms(): HasMany
-    {
-        return $this->hasMany(WindFarm::class, 'owner_id');
-    }
 }

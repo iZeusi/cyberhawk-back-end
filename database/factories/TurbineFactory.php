@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Turbine;
+use App\Models\WindFarm;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Turbine>
+ * @extends Factory<Turbine>
  */
 class TurbineFactory extends Factory
 {
@@ -14,10 +16,13 @@ class TurbineFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'farm_id' => WindFarm::factory(),
+            'lat' => $this->faker->latitude(),
+            'lng' => $this->faker->longitude(),
         ];
     }
 }

@@ -15,6 +15,7 @@ class Component extends Model
 
     protected $fillable = [
         'turbine_id',
+        'component_type_id',
     ];
 
     public function turbine(): BelongsTo
