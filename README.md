@@ -73,4 +73,21 @@ composer install --ignore-platform-reqs
   - Sail creates a docker volume which is persistent, so stopping/starting sail will not affect/fix issues in a volume (missing DB etc)
 
 ## Your Notes
-This is a place for you to add your notes, plans, thinking and any feedback you have for us of the task, please feel free to include whatever you like here, we'll make sure to read it. 
+
+Idea is to create a small-scale inspection system linked to periods of time when wind farms can be inspected.
+During each period or window, an inspection can be started, and each component of each turbine within the wind farm is inspected.
+This then gives the turbine a collective grade, and in turn, gives the wind farm an overall grade for that inspection window.
+Will also link to whether or not the wind farm has passed or failed compliance.
+Finally, user will be able to filter through previous inspections to see which wind farms passed, failed, what grade they were assigned etc.
+
+First step is to plan out a Database Schema that will help with scoping what features are needed to build this solution.
+
+![Database Schema](docs/images/Database_Schema.png)
+
+Here is a rough idea of what the schema will look like, although this is subject to change.
+
+Next I create my Models and Migrations to update the database with the tables I need.
+I use the `sail artisan make:model <ModelName> --all` command to do this.
+This will create the following files; Model, Migration, Form Request, Policy, Controller, Factory, Seeder
+This allows me to fully utilize Laravel as MVC framework, and I can always delete any classes that I don't need later.
+I then populate these files with the correct fields and relationships that are required.

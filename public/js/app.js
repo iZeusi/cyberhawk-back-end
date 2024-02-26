@@ -2205,7 +2205,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _Farms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Farms */ "./resources/js/components/Farms.jsx");
 /* harmony import */ var _Farm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Farm */ "./resources/js/components/Farm.jsx");
-/* harmony import */ var _Turbines__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Turbines */ "./resources/js/components/Turbines.jsx");
+/* harmony import */ var _Turbines__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Turbine */ "./resources/js/components/Turbines.jsx");
 /* harmony import */ var _Turbine__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Turbine */ "./resources/js/components/Turbine.jsx");
 /* harmony import */ var _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/HomeIcon.js");
 /* harmony import */ var _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/UsersIcon.js");
@@ -3271,7 +3271,7 @@ Turbine.propTypes = {};
 
 /***/ "./resources/js/components/Turbines.jsx":
 /*!**********************************************!*\
-  !*** ./resources/js/components/Turbines.jsx ***!
+  !*** ./resources/js/components/Turbine.jsx ***!
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -12207,7 +12207,7 @@ function createSyntheticEvent(Interface) {
    *
    * These systems should generally use pooling to reduce the frequency of garbage
    * collection. The system should check `isPersistent` to determine whether the
-   * event should be released into the pool after being dispatched. Users that
+   * event should be released into the pool after being dispatched. User that
    * need a persisted event should invoke `persist`.
    *
    * Synthetic events (and subclasses) implement the DOM Level 3 Events API by
@@ -35005,7 +35005,7 @@ if (
 ) {
   __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 }
-        
+
   })();
 }
 
@@ -40560,7 +40560,7 @@ if (
 ) {
   __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 }
-        
+
   })();
 }
 
@@ -42001,7 +42001,7 @@ if (
 ) {
   __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 }
-        
+
   })();
 }
 
@@ -42266,7 +42266,7 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -42280,20 +42280,20 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
 /******/ 	(() => {
@@ -42326,7 +42326,7 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /******/ 			return result;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -42338,7 +42338,7 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -42350,12 +42350,12 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -42366,7 +42366,7 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -42375,11 +42375,11 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /******/ 			return module;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
-/******/ 		
+/******/
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
@@ -42387,19 +42387,19 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0
 /******/ 		};
-/******/ 		
+/******/
 /******/ 		// no chunk on demand loading
-/******/ 		
+/******/
 /******/ 		// no prefetching
-/******/ 		
+/******/
 /******/ 		// no preloaded
-/******/ 		
+/******/
 /******/ 		// no HMR
-/******/ 		
+/******/
 /******/ 		// no HMR manifest
-/******/ 		
+/******/
 /******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
+/******/
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
 /******/ 			var [chunkIds, moreModules, runtime] = data;
@@ -42424,20 +42424,20 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(XIcon);
 /******/ 			}
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
-/******/ 		
+/******/
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
-/******/ 	
+/******/
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+/******/
 /******/ })()
 ;
