@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use App\Models\ComponentType;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class ComponentTypeTest extends TestCase
 {

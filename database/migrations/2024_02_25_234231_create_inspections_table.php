@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('inspections', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('turbine_id');
+            $table->unsignedBigInteger('turbine_id');
             $table->foreign('turbine_id')->references('id')->on('turbines');
+            $table->dateTime('inspected_at');
             $table->softDeletes();
             $table->timestamps();
         });

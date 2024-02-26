@@ -4,18 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInspectionRequest;
 use App\Http\Requests\UpdateInspectionRequest;
-use App\Inspections;
+use App\Models\Grade;
+use App\Models\Inspection;
+use Illuminate\Http\JsonResponse;
 
 class InspectionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
-        //
+        $data = Inspection::all()->map(function ($component) {
+            return [
+                'id' => $component->id,
+                'turbine_id' => $component->turbine_id,
+                'inspected_at' => $component->created_at->toIso8601String(),
+                'created_at' => $component->created_at->toIso8601String(),
+                'updated_at' => $component->updated_at->toIso8601String(),
+            ];
+        });
+
+        return response()->json(['data' => $data]);
     }
 
     /**
@@ -42,21 +54,21 @@ class InspectionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Inspections  $inspections
-     * @return \Illuminate\Http\Response
+     * @param Inspection $inspection
+     * @return JsonResponse
      */
-    public function show(Inspections $inspections)
+    public function show(Inspection $inspection): JsonResponse
     {
-        //
+        return response()->json($inspection);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Inspections  $inspections
-     * @return \Illuminate\Http\Response
+     * @param Inspection $inspection
+     * @return JsonResponse
      */
-    public function edit(Inspections $inspections)
+    public function edit(Inspection $inspection)
     {
         //
     }
@@ -65,10 +77,10 @@ class InspectionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateInspectionRequest  $request
-     * @param  \App\Inspections  $inspections
+     * @param  \App\Models\Inspection  $inspection
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateInspectionRequest $request, Inspections $inspections)
+    public function update(UpdateInspectionRequest $request, Inspection $inspection)
     {
         //
     }
@@ -76,11 +88,34 @@ class InspectionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Inspections  $inspections
+     * @param  \App\Models\Inspection  $inspection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Inspections $inspections)
+    public function destroy(Inspection $inspection)
     {
         //
+    }
+
+    /**
+     * Display specified resource's grades.
+     *
+     * @param Inspection $inspection
+     * @return JsonResponse
+     */
+    public function grades(Inspection $inspection): JsonResponse
+    {
+        return response()->json(['data' => $inspection->grades]);
+    }
+
+    /**
+     * Display specified resource's grade.
+     *
+     * @param Inspection $inspection
+     * @param Grade $grade
+     * @return JsonResponse
+     */
+    public function showGrade(Inspection $inspection, Grade $grade): JsonResponse
+    {
+        return response()->json($inspection->grades()->where('id', $grade->id)->first());
     }
 }

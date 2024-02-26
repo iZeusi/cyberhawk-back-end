@@ -6,7 +6,7 @@ use App\Models\Turbine;
 use App\Models\WindFarm;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class WindFarmTest extends TestCase
 {
@@ -53,7 +53,7 @@ class WindFarmTest extends TestCase
     public function testGetAllTurbinesForWindFarm()
     {
         $windFarm = WindFarm::factory()->create();
-        Turbine::factory(5)->create(['wind_farm_id' => $windFarm->id]);
+        Turbine::factory(5)->create(['farm_id' => $windFarm->id]);
 
         $response = $this->get("/api/farms/$windFarm->id/turbines");
         $response->assertStatus(200);
@@ -77,7 +77,7 @@ class WindFarmTest extends TestCase
     public function testGetTurbineForWindFarm()
     {
         $windFarm = WindFarm::factory()->create();
-        $turbine = Turbine::factory()->create(['wind_farm_id' => $windFarm->id]);
+        $turbine = Turbine::factory()->create(['farm_id' => $windFarm->id]);
 
         $response = $this->get("/api/farms/$windFarm->id/turbines/$turbine->id");
         $response->assertStatus(200);

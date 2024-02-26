@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Component;
+use App\Models\Grade;
 use Illuminate\Database\Seeder;
 
 class ComponentSeeder extends Seeder
@@ -14,6 +15,6 @@ class ComponentSeeder extends Seeder
      */
     public function run()
     {
-        Component::factory(50)->create();
+        Component::factory(50)->has(Grade::factory(5));
     }
 }

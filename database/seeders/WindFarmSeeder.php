@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Turbine;
 use App\Models\WindFarm;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class WindFarmSeeder extends Seeder
      */
     public function run()
     {
-        WindFarm::factory(50)->create();
+        WindFarm::factory(50)->has(Turbine::factory(5));
     }
 }

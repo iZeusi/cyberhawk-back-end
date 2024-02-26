@@ -3,6 +3,7 @@
 use App\Http\Controllers\ComponentController;
 use App\Http\Controllers\ComponentTypeController;
 use App\Http\Controllers\GradeController;
+use App\Http\Controllers\GradeTypeController;
 use App\Http\Controllers\InspectionController;
 use App\Http\Controllers\TurbineController;
 use App\Http\Controllers\WindFarmController;
@@ -25,9 +26,9 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::get('/farms', WindFarmController::class . '@index');
-Route::get('/farms/{id}', WindFarmController::class. '@show');
-Route::get('/farms/{id}/turbines', WindFarmController::class. '@turbines');
-Route::get('/farms/{id}/turbines/{id}', WindFarmController::class. '@showTurbine');
+Route::get('/farms/{wind_farm:id}', WindFarmController::class. '@show');
+Route::get('/farms/{wind_farm:id}/turbines', WindFarmController::class. '@turbines');
+Route::get('/farms/{wind_farm:id}/turbines/{turbine:id}', WindFarmController::class. '@showTurbine');
 
 /*
 |--------------------------------------------------------------------------
@@ -35,11 +36,11 @@ Route::get('/farms/{id}/turbines/{id}', WindFarmController::class. '@showTurbine
 |--------------------------------------------------------------------------
 */
 Route::get('/turbines', TurbineController::class . '@index');
-Route::get('/turbines/{id}', TurbineController::class. '@show');
-Route::get('/turbines/{id}/components', TurbineController::class. '@components');
-Route::get('/turbines/{id}/components/{id}', TurbineController::class. '@showComponent');
-Route::get('/turbines/{id}/inspections', TurbineController::class. '@inspections');
-Route::get('/turbines/{id}/inspections/{id}', TurbineController::class. '@showInspection');
+Route::get('/turbines/{turbine:id}', TurbineController::class. '@show');
+Route::get('/turbines/{turbine:id}/components', TurbineController::class. '@components');
+Route::get('/turbines/{turbine:id}/components/{component:id}', TurbineController::class. '@showComponent');
+Route::get('/turbines/{turbine:id}/inspections', TurbineController::class. '@inspections');
+Route::get('/turbines/{turbine:id}/inspections/{inspection:id}', TurbineController::class. '@showInspection');
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +48,9 @@ Route::get('/turbines/{id}/inspections/{id}', TurbineController::class. '@showIn
 |--------------------------------------------------------------------------
 */
 Route::get('/components', ComponentController::class . '@index');
-Route::get('/components/{id}', ComponentController::class. '@show');
-Route::get('/components/{id}/grades', ComponentController::class. '@grades');
-Route::get('/components/{id}/grades/{id}', ComponentController::class. '@showGrade');
+Route::get('/components/{component:id}', ComponentController::class. '@show');
+Route::get('/components/{component:id}/grades', ComponentController::class. '@grades');
+Route::get('/components/{component:id}/grades/{grade:id}', ComponentController::class. '@showGrade');
 
 /*
 |--------------------------------------------------------------------------
@@ -57,9 +58,9 @@ Route::get('/components/{id}/grades/{id}', ComponentController::class. '@showGra
 |--------------------------------------------------------------------------
 */
 Route::get('/inspections', InspectionController::class . '@index');
-Route::get('/inspections/{id}', InspectionController::class. '@show');
-Route::get('/inspections/{id}/grades', InspectionController::class. '@grades');
-Route::get('/inspections/{id}/grades/{id}', InspectionController::class. '@showGrade');
+Route::get('/inspections/{inspection:id}', InspectionController::class. '@show');
+Route::get('/inspections/{inspection:id}/grades', InspectionController::class. '@grades');
+Route::get('/inspections/{inspection:id}/grades/{grade:id}', InspectionController::class. '@showGrade');
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +68,7 @@ Route::get('/inspections/{id}/grades/{id}', InspectionController::class. '@showG
 |--------------------------------------------------------------------------
 */
 Route::get('/grades', GradeController::class . '@index');
-Route::get('/grades/{id}', GradeController::class. '@show');
+Route::get('/grades/{grade:id}', GradeController::class. '@show');
 
 /*
 |--------------------------------------------------------------------------
@@ -75,12 +76,12 @@ Route::get('/grades/{id}', GradeController::class. '@show');
 |--------------------------------------------------------------------------
 */
 Route::get('/component-types', ComponentTypeController::class. '@index');
-Route::get('/component-types/{id}', ComponentTypeController::class. '@show');
+Route::get('/component-types/{component_type:id}', ComponentTypeController::class. '@show');
 
 /*
 |--------------------------------------------------------------------------
 | Grade Types Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/grade-types', GradeController::class. '@index');
-Route::get('/grade-types/{id}', GradeController::class. '@show');
+Route::get('/grade-types', GradeTypeController::class. '@index');
+Route::get('/grade-types/{grade_type:id}', GradeTypeController::class. '@show');

@@ -19,7 +19,7 @@ class TurbineFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->word,
             'farm_id' => WindFarm::factory(),
             'lat' => $this->faker->latitude(),
             'lng' => $this->faker->longitude(),

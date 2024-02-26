@@ -7,7 +7,7 @@ use App\Models\Inspection;
 use App\Models\Turbine;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class InspectionTest extends TestCase
 {

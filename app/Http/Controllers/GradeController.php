@@ -2,20 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Grades;
 use App\Http\Requests\StoreGradeRequest;
 use App\Http\Requests\UpdateGradeRequest;
+use App\Models\Grade;
+use Illuminate\Http\JsonResponse;
 
 class GradeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
-        //
+        $data = Grade::all()->map(function ($grade) {
+            return [
+                'id' => $grade->id,
+                'inspection_id' => $grade->inspection_id,
+                'component_id' => $grade->component_id,
+                'grade_type_id' => $grade->grade_type_id,
+                'created_at' => $grade->created_at->toIso8601String(),
+                'updated_at' => $grade->updated_at->toIso8601String(),
+            ];
+        });
+
+        return response()->json(['data' => $data]);
     }
 
     /**
@@ -42,21 +54,21 @@ class GradeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Grades  $grades
-     * @return \Illuminate\Http\Response
+     * @param Grade $grade
+     * @return JsonResponse
      */
-    public function show(Grades $grades)
+    public function show(Grade $grade): JsonResponse
     {
-        //
+        return response()->json($grade);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Grades  $grades
+     * @param Grade $grade
      * @return \Illuminate\Http\Response
      */
-    public function edit(Grades $grades)
+    public function edit(Grade $grade)
     {
         //
     }
@@ -64,11 +76,11 @@ class GradeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateGradeRequest  $request
-     * @param  \App\Grades  $grades
+     * @param UpdateGradeRequest $request
+     * @param Grade $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateGradeRequest $request, Grades $grades)
+    public function update(UpdateGradeRequest $request, Grade $grade)
     {
         //
     }
@@ -76,10 +88,10 @@ class GradeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Grades  $grades
+     * @param Grade $grade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Grades $grades)
+    public function destroy(Grade $grade)
     {
         //
     }

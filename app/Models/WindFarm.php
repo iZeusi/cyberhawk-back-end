@@ -18,6 +18,6 @@ class WindFarm extends Model
 
     public function turbines(): HasMany
     {
-        return $this->hasMany(Turbine::class);
+        return $this->hasMany(Turbine::class, 'farm_id');
     }
 }

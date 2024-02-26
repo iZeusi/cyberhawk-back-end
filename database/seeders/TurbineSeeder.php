@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Component;
+use App\Models\Inspection;
 use App\Models\Turbine;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +16,6 @@ class TurbineSeeder extends Seeder
      */
     public function run()
     {
-        Turbine::factory(50)->create();
+        Turbine::factory(50)->has(Component::factory(5))->has(Inspection::factory(5));
     }
 }

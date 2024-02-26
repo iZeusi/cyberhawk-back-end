@@ -5,17 +5,27 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreGradeTypeRequest;
 use App\Http\Requests\UpdateGradeTypeRequest;
 use App\Models\GradeType;
+use Illuminate\Http\JsonResponse;
 
 class GradeTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
-        //
+        $data = GradeType::all()->map(function ($gradeType) {
+            return [
+                'id' => $gradeType->id,
+                'name' => $gradeType->name,
+                'created_at' => $gradeType->created_at->toIso8601String(),
+                'updated_at' => $gradeType->updated_at->toIso8601String(),
+            ];
+        });
+
+        return response()->json(['data' => $data]);
     }
 
     /**
@@ -42,12 +52,12 @@ class GradeTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\GradeType  $gradeType
-     * @return \Illuminate\Http\Response
+     * @param GradeType $gradeType
+     * @return JsonResponse
      */
-    public function show(GradeType $gradeType)
+    public function show(GradeType $gradeType): JsonResponse
     {
-        //
+        return response()->json($gradeType);
     }
 
     /**

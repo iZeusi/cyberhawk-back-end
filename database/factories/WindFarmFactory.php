@@ -19,10 +19,7 @@ class WindFarmFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
-            'location' => $this->faker->address,
-            'contact_number' => $this->faker->phoneNumber,
-            'owner_id' => User::factory(),
+            'name' => $this->faker->word,
         ];
     }
 }
