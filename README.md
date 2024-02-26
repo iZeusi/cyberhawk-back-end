@@ -91,3 +91,14 @@ I use the `sail artisan make:model <ModelName> --all` command to do this.
 This will create the following files; Model, Migration, Form Request, Policy, Controller, Factory, Seeder
 This allows me to fully utilize Laravel as MVC framework, and I can always delete any classes that I don't need later.
 I then populate these files with the correct fields and relationships that are required.
+
+At this point, I am considering creating some tests that mirror my models, to match the fields to the api spec.
+I create a Unit test using the `sail artisan make:test <ModelName>Test --unit`, and populate with some general tests.
+I also want to be using Model Factories and Seeders to achieve the task, so that I can quickly populate my app with
+data to be used and tested against. After filling out some adequate tests, I make sure my factories represent the
+correct fields to match my models, and then go on to fill out the seeder classes, so that my models can be generated.
+
+At this point, I can run `sail artisan db:wipe` and then `sail artisan migrate:fresh --seed` to generate a full
+dataset that meets the requirements of the api spec. I also added in a field for the score of the grade types; even
+though this is not required by the spec, it is required for the task.
+
