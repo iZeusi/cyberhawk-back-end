@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('components', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->unsignedInteger('turbine_id');
             $table->foreign('turbine_id')->references('id')->on('turbines');
             $table->softDeletes();

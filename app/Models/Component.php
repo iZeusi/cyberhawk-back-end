@@ -14,13 +14,17 @@ class Component extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name',
         'turbine_id',
     ];
 
     public function turbine(): BelongsTo
     {
         return $this->belongsTo(Turbine::class);
+    }
+
+    public function componentType(): BelongsTo
+    {
+        return $this->belongsTo(ComponentType::class);
     }
 
     public function componentInspections(): HasMany

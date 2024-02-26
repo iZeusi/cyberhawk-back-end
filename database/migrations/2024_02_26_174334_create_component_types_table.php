@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('grades', function (Blueprint $table) {
+        Schema::create('component_types', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('grade_type_id');
-            $table->foreign('grade_type_id')->references('id')->on('grade_types');
-            $table->softDeletes();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grades');
+        Schema::dropIfExists('component_types');
     }
 };
