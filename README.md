@@ -102,3 +102,39 @@ At this point, I can run `sail artisan db:wipe` and then `sail artisan migrate:f
 dataset that meets the requirements of the api spec. I also added in a field for the score of the grade types; even
 though this is not required by the spec, it is required for the task.
 
+I then decided to add Authentication to the API routes, so the user must have registered and logged in to be able
+to access any of the data. This uses Sanctum, and protects any route within the api.php class from the
+RouteServiceProvider. This means that if more routes are needed to be added, they will automatically be protected.
+
+To run the application from scratch:
+
+- Copy `.env.example` into `.env`
+- Run the following command
+
+```bash
+docker run --rm \
+-u "$(id -u):$(id -g)" \
+-v $(pwd):/var/www/html \
+-w /var/www/html \
+laravelsail/php80-composer:latest \
+composer install --ignore-platform-reqs
+```
+
+- Run `./vendor/bin/sail build --no-cache` (aliased to sail from here on out)
+- Run `sail up` (`-d` if preferred)
+- Run `sail artisan migrate:fresh --seed`
+- Run `sail artisan test` to see green checks :)
+
+You can `post` a `/login` with the credentials `test@example.com@password` to be Authenticated, and then access the api
+
+Thanks for taking the time to check this out!
+- Karl G
+
+P.S Apologies for the GitHub name :o
+
+
+Nice to have added:
+- Spatie Permission / Role integration
+- Full front end login / register panel
+- Inspection system, with windows, statuses, expiry
+- Filtering, sorting, pagination

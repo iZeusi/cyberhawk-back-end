@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// All routes in this file are protected by the "auth:sanctum" middleware group, as of the RouteServiceProvider
+
 /*
 |--------------------------------------------------------------------------
 | Wind Farm Routes
@@ -85,3 +87,4 @@ Route::get('/component-types/{component_type:id}', ComponentTypeController::clas
 */
 Route::get('/grade-types', GradeTypeController::class. '@index');
 Route::get('/grade-types/{grade_type:id}', GradeTypeController::class. '@show');
+

@@ -4,8 +4,10 @@ namespace Tests\Unit;
 
 use App\Models\Component;
 use App\Models\Grade;
+use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
+use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class ComponentTest extends TestCase
